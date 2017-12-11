@@ -1,0 +1,52 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mon livre de recettes</title>
+        
+        <!-- Inclusion des librairies js -->
+        <script src="assets/js/angular.js" type="text/javascript"></script>
+        
+        <script src="assets/js/modules/cookbook.module.js" type="text/javascript"></script>
+        <script src="assets/js/controllers/premiercontroller.controller.js" type="text/javascript"></script>
+    </head>
+    <body ng-app="cookbook">
+        <div ng-controller="premierController">
+            <input type="text" ng-model="nomRecette" />
+            <button type="button" ng-click="addRecette(nomRecette);">
+                Ajouter
+            </button>
+            
+            <ul>
+                <li ng-repeat="item in recettes">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
