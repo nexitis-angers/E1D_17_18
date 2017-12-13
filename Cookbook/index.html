@@ -10,24 +10,55 @@
         <meta charset="utf-8">
         <title>Mon livre de recettes</title>
         
+        <!-- Inclusion du css -->
+        <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/cookbook.css" rel="stylesheet" />
+        
         <!-- Inclusion des librairies js -->
         <script src="assets/js/angular.js" type="text/javascript"></script>
         
         <script src="assets/js/modules/cookbook.module.js" type="text/javascript"></script>
+        
+        <script src="assets/js/services/storage.service.js" type="text/javascript"></script>
+           
         <script src="assets/js/controllers/premiercontroller.controller.js" type="text/javascript"></script>
+        <script src="assets/js/directives/myEnter.directive.js" type="text/javascript"></script>
     </head>
     <body ng-app="cookbook">
-        <div ng-controller="premierController">
-            <input type="text" ng-model="nomRecette" />
-            <button type="button" ng-click="addRecette(nomRecette);">
-                Ajouter
-            </button>
-            
-            <ul>
-                <li ng-repeat="item in recettes">
-                    {{item}}
-                </li>
-            </ul>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        <img src="assets/img/logo.png" alt="Logo Cookbook"  />
+                    </a>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Mes recettes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div ng-controller="premierController" ng-init="init();">
+                        <input type="text" ng-model="nomRecette" my-enter="addRecette(nomRecette);" />
+                        <button type="button" ng-click="addRecette(nomRecette);">
+                            Ajouter
+                        </button>
+
+                        <ul>
+                            <li ng-repeat="item in cookbook.recipes">
+                                {{item.name}}
+                            </li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="col-sm-10">
+                    
+                </div>
+            </div>
+        
         </div>
     </body>
 </html>

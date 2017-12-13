@@ -11,6 +11,13 @@
     height: 86px;
     margin: 0px 0px;
     padding: 0;
+    border: none;
+}
+
+.navbar-brand img{
+    height: 84px;
+    margin: 0;
+    padding: 0;
 }
 
 ul.nav.navbar-nav a
