@@ -57,7 +57,8 @@
                         </ul>
                     </div>  
                 </div>
-                <div class="col-sm-10" ng-controller="recipeDetail">
+                <div class="col-sm-10" ng-controller="recipeDetail" ng-show="recipe !== null && recipe !== undefined">
+                    <h1>Ma recette</h1>
                     <h1>{{recipe.name}}</h1>
                 </div>
             </div>
