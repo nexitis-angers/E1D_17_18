@@ -1,12 +1,7 @@
-
-
-
-
-
 /*
     Chargement du controller avec injection du scope, mais aussi du service de stockage
 */
-app.controller('premierController',function($scope,storageSvc){
+app.controller('recipeList',function($scope,storageSvc, recipeSvc){
    
     // Initialisation d'un tableau de recettes
     $scope.cookbook = undefined;
@@ -30,6 +25,14 @@ app.controller('premierController',function($scope,storageSvc){
             });
         // Sauvegarde
         storageSvc.save($scope.cookbook);
+    }
+    
+    /**
+     * Sélectionne la recette 
+     * @param {object} recipe La recette qui a été sélectionnée par l'utilisateur
+     */
+    $scope.selectRecipe = function(recipe){
+        recipeSvc.setSelectedRecipe(recipe);
     }
     
 });

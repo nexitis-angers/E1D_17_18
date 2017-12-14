@@ -28,7 +28,11 @@ app.service('storageSvc', function(){
      * @param {object} cookbook Le livre de recettes à sauvegarder
      */
     this.save = function(cookbook){
-        localStorage.setItem('myCookbook',angular.toJson(cookbook));
+       localStorage.setItem('myCookbook',angular.toJson(cookbook));
+    }
+    
+    maFonction = function(){
+        
     }
     
 });
