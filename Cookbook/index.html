@@ -21,6 +21,7 @@
         
         <script src="assets/js/services/storage.service.js" type="text/javascript"></script>
         <script src="assets/js/services/recipe.service.js" type="text/javascript"></script>
+        <script src="assets/js/services/openfoodfact.service.js" type="text/javascript"></script>
            
         <script src="assets/js/controllers/recipeList.controller.js" type="text/javascript"></script>
         <script src="assets/js/controllers/recipeDetail.controller.js" type="text/javascript"></script>
@@ -60,6 +61,15 @@
                 <div class="col-sm-10" ng-controller="recipeDetail" ng-show="recipe !== null && recipe !== undefined">
                     <h1>Ma recette</h1>
                     <h1>{{recipe.name}}</h1>
+                    
+                    <input type="text" ng-model="ingredientName" />
+                    <button type="button" ng-click="searchIngredient(ingredientName)">Chercher sur OpenFoodFacts</button>
+                
+                    <ul>
+                        <li ng-repeat="item in openFoodFactsResult">
+                            <b>{{item.brand}}</b> - {{item.name}}
+                        </li>
+                    </ul>
                 </div>
             </div>
         
